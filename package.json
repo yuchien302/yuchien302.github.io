@@ -1,0 +1,33 @@
+{
+  "name": "yuchien302.github.io",
+  "version": "0.1.0",
+  "description": "my personal portfolio website",
+  "author": "Yu-Chien, Chan <yc2257@cornell.edu>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuchien302/yuchien302.github.io"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-react": "^3.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "bootstrap-sass": "^3.3.6",
+    "react-bootstrap": "^0.28.1",
+    "react-motion": "^0.3.1",
+    "react-swipeable-views": "^0.3.3",
+    "material-ui": "^0.13.4",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-tap-event-plugin": "^0.2.1",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
