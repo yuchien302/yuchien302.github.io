@@ -23,7 +23,7 @@ gulp.task('default', ['sass', 'js'], function() {
 gulp.task('sass', function() {
     return gulp.src("./src/style/*.sass")
         .pipe(sass())
-        .pipe(gulp.dest("dist/style"))
+        .pipe(gulp.dest("dist"))
         .pipe(browserSync.stream());
 });
 
@@ -33,7 +33,7 @@ gulp.task('js', function(){
         .transform(reactify)
         .bundle()
         .pipe(source('bundle.js'))
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
 
