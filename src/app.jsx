@@ -29,17 +29,17 @@ var App = React.createClass({
     };
   },
   getInitialState: function() {
-    return {slideIndex: 0, sticky: false};
+    return {slideIndex: 0, sticky: false, prevScrollTop: 0};
   },
   onChangeTabs: function(value) {
     var index = parseInt(value, 10)
-    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 62
+    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
     this.setState({
       slideIndex: parseInt(value, 10), sticky: sticky
     });
   },
   onChangeIndex: function(index) {
-    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 62
+    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
     this.setState({
       slideIndex: index, sticky: sticky
     });
@@ -50,19 +50,24 @@ var App = React.createClass({
 
   componentWillUnmount: function() {
     document.documentElement.removeEventListener('scroll', this.handleScroll);
-  },  
+  },
+
   onScrollSlide: function(e){
-    // console.log(e.target.scrollTop)
-    if(e.target.scrollTop > 62 && !this.state.sticky){
+    var scrollTop = e.target.scrollTop;
+
+    if( scrollTop > 10 && (scrollTop - this.state.prevScrollTop) > 0 && !this.state.sticky){
       this.setState({
-        sticky: true
+        sticky: true, prevScrollTop: scrollTop
       });
-    } else if(e.target.scrollTop <= 62 && this.state.sticky){
+    } else if( scrollTop <= 100 && (scrollTop - this.state.prevScrollTop) < 0 && this.state.sticky){
       this.setState({
-        sticky: false
+        sticky: false, prevScrollTop: scrollTop
+      });
+    } else{
+      this.setState({
+        prevScrollTop: scrollTop
       });
     }
-    
   },
   render: function() {
     if(this.state.sticky){
