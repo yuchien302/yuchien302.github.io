@@ -10,8 +10,11 @@ var CardText = require('material-ui/lib/card/card-text');
 var CardTitle = require('material-ui/lib/card/card-title');
 var FlatButton = require('material-ui/lib/flat-button');
 
-// My Components
+// Twitter Bootstrap
 var Modal = require('react-bootstrap/lib/Modal')
+
+// My Components
+var Tag = require('./Tag.jsx')
 
 var ProjectBaseSystem = React.createClass({
   getInitialState: function() {
@@ -30,17 +33,18 @@ var ProjectBaseSystem = React.createClass({
       <div>
         <Card>
           <CardMedia>
-            <img src="/src/images/basesystem.jpg"/>
+            <img src="/dist/images/basesystem.jpg"/>
           </CardMedia>
 
           <CardTitle title="BaseSystem" subtitle="Computer asset aggregator" actAsExpander={true}
             showExpandableButton={true} />
           
-          <CardText>
-            <ul className="tags">
-              <li><a href="#">tag</a></li>
-              <li><a href="#">tag name</a></li>
-            </ul>
+          <CardText style={{paddingTop: "0"}}>
+            <Tag title="Web App" type="category"/>
+            <Tag title="React.js" type="tech"/>
+            <Tag title="Node.js" type="tech"/>
+            <Tag title="Q.js" type="tech"/>
+            <Tag title="MSSQL" type="tech"/>
           </CardText>
 
           <CardText expandable={true}>

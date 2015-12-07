@@ -26,7 +26,7 @@ var Project = React.createClass({
       <div>
         <Card>
           <CardMedia>
-            <img src="/src/images/wateriraira.png"/>
+            <img src="/dist/images/wateriraira.png"/>
           </CardMedia>
 
           <CardTitle title="Title" subtitle="Subtitle" actAsExpander={true}
