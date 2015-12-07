@@ -5,7 +5,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
-
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 // Static Server + watching scss/html files
 gulp.task('default', ['sass', 'js'], function() {
 
@@ -37,4 +38,15 @@ gulp.task('js', function(){
         .pipe(browserSync.stream());
 });
 
-// gulp.task('default', ['js']);
+
+
+
+gulp.task('images', () => {
+    return gulp.src('./src/images/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/images'));
+});
