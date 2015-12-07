@@ -31,6 +31,9 @@ var App = React.createClass({
   getInitialState: function() {
     return {slideIndex: 0, sticky: false, prevScrollTop: 0};
   },
+  shouldComponentUpdate: function(nextProps, nextState){
+    return (this.state.slideIndex !== nextState.slideIndex) || (this.state.sticky !== nextState.sticky)
+  },
   onChangeTabs: function(value) {
     var index = parseInt(value, 10)
     var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
