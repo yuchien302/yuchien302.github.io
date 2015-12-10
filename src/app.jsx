@@ -73,16 +73,20 @@ var App = React.createClass({
     }
   },
   render: function() {
+    style = {position: "fixed", width: "100%", zIndex: 10, transition: "0.3s"}
+    
     if(this.state.sticky){
-      var offsetTop = "-100px"
+      style.boxShadow = "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)"
+      style.top = "-100px"
     } else {
-      var offsetTop = 0
+      style.boxShadow = "none"
+      style.top = "-10px"
     }
     return (
 
       <div style={{height: "100%"}}>
-        <div style={{position: "fixed", width: "100%", zIndex: 10, top:offsetTop, transition: "0.3s"}}>
-          <div style={{height: "100px", backgroundImage: "url('/dist/images/bg.png')", backgroundAttachment:"fixed",
+        <div style={style}>
+          <div style={{height: "100px", backgroundImage: "url('/src/images/bg2.jpg')", backgroundAttachment:"fixed", backgroundSize: "cover",
             paddingTop: "36px", paddingLeft: "50px" }}>
             <h2 style={{color: "white", margin: 0, padding: 0}}>Yu-Chien Chan</h2>
           </div>

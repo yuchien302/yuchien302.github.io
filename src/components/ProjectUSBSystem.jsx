@@ -1,6 +1,8 @@
 var React = require('react');
 
 // Material-UI
+var Colors = require('material-ui/lib/styles/colors');
+
 var Card = require('material-ui/lib/card/card');
 var CardActions = require('material-ui/lib/card/card-actions');
 var CardExpandable = require('material-ui/lib/card/card-expandable');
@@ -30,28 +32,28 @@ var ProjectUSBSystem = React.createClass({
   render: function() {
     return (
 
-      <div>
+      <div style={this.props.style}  className="item" key={1}>
         <Card>
+          <CardTitle title="USBAlarmSystem" subtitle="Monitoring unauthorized flash drive usage"/>
           <CardMedia>
             <img src="/dist/images/usbsystem.jpg"/>
           </CardMedia>
 
-          <CardTitle title="USBAlarmSystem" subtitle="Monitoring unauthorized flash drive usage" actAsExpander={true}
-            showExpandableButton={true} />
           
-          <CardText style={{paddingTop: "0"}}>
-            <Tag title="Web App" type="category"/>
-            <Tag title="React.js" type="tech"/>
-            <Tag title="Node.js" type="tech"/>
-            <Tag title="Q.js" type="tech"/>
-            <Tag title="MSSQL" type="tech"/>
+          
+          <CardText>
+            <Tag title="Web App" type="category"/> 
+            <Tag title="React.js" type="tech"/> 
+            <Tag title="Node.js" type="tech"/> 
+            <Tag title="Q.js" type="tech"/> 
+            <Tag title="MSSQL" type="tech"/> 
           </CardText>
 
-          <CardText expandable={true}>
+          <CardText>
             Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen
           </CardText>
 
-          <CardActions expandable={true}>
+          <CardActions style={{borderTop: "1px solid " + Colors.grey300, textAlign: "right"}}>
             <FlatButton label="MORE" onClick={this.showModal}/>
           </CardActions>
 

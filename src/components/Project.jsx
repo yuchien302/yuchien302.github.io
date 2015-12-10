@@ -29,7 +29,7 @@ var Project = React.createClass({
             <img src="/dist/images/wateriraira.png"/>
           </CardMedia>
 
-          <CardTitle title="Title" subtitle="Subtitle" actAsExpander={true}
+          <CardTitle title="Water" subtitle="Subtitle" actAsExpander={true}
             showExpandableButton={true} />
 
           <CardText expandable={true}>

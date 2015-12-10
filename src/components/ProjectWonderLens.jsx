@@ -1,6 +1,8 @@
 var React = require('react');
 
 // Material-UI
+var Colors = require('material-ui/lib/styles/colors');
+
 var Card = require('material-ui/lib/card/card');
 var CardActions = require('material-ui/lib/card/card-actions');
 var CardExpandable = require('material-ui/lib/card/card-expandable');
@@ -30,26 +32,24 @@ var ProjectWonderLens = React.createClass({
   render: function() {
     return (
 
-      <div>
+      <div style={this.props.style} className="item" key={3}>
         <Card>
+          <CardTitle title="WonderLens" subtitle="Optical Lenses and Mirrors for Tangible Interactions on Printed Paper" />
           <CardMedia>
             <img src="/dist/images/wonderlens.png"/>
           </CardMedia>
 
-          <CardTitle title="WonderLens" subtitle="Optical Lenses and Mirrors for Tangible Interactions on Printed Paper" actAsExpander={true}
-            showExpandableButton={true} />
-          
-          <CardText style={{paddingTop: "0"}}>
+          <CardText>
             <Tag title="Physical Computing" type="category"/>
             <Tag title="Arduino" type="tech"/>
             <Tag title="Processing" type="tech"/>
           </CardText>
 
-          <CardText expandable={true}>
+          <CardText>
             Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen
           </CardText>
 
-          <CardActions expandable={true}>
+          <CardActions style={{borderTop: "1px solid " + Colors.grey300, textAlign: "right"}}>
             <FlatButton label="MORE" onClick={this.showModal}/>
           </CardActions>
 

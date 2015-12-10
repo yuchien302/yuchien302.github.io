@@ -32,7 +32,7 @@ var styles = {
     height: '100%'
   },
   container: {
-    display: 'flex',
+    display: '-webkit-box; display: flex',
     height: '100%'
   },
   slide: {
@@ -42,7 +42,7 @@ var styles = {
     willChange: 'transform',
     height: '100%',
     WebkitOverflowScrolling: "touch",
-    paddingTop: "162px"
+    paddingTop: "170px"
   }
 };
 

@@ -1,6 +1,8 @@
 var React = require('react');
 
 // Material-UI
+var Colors = require('material-ui/lib/styles/colors');
+
 var Card = require('material-ui/lib/card/card');
 var CardActions = require('material-ui/lib/card/card-actions');
 var CardExpandable = require('material-ui/lib/card/card-expandable');
@@ -30,16 +32,16 @@ var ProjectSeeSS = React.createClass({
   render: function() {
     return (
 
-      <div>
+      <div style={this.props.style}  className="item" key={2}>
         <Card>
+          <CardTitle title="SeeSS" subtitle="Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)"/>
           <CardMedia>
             <img src="/dist/images/seess.png"/>
           </CardMedia>
 
-          <CardTitle title="SeeSS" subtitle="Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)" actAsExpander={true}
-            showExpandableButton={true} />
+
           
-          <CardText style={{paddingTop: "0"}}>
+          <CardText>
             <Tag title="Brackets Extension" type="category"/>
             <Tag title="React.js" type="tech"/>
             <Tag title="Node.js" type="tech"/>
@@ -47,11 +49,11 @@ var ProjectSeeSS = React.createClass({
             <Tag title="MSSQL" type="tech"/>
           </CardText>
 
-          <CardText expandable={true}>
+          <CardText>
             Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen
           </CardText>
 
-          <CardActions expandable={true}>
+          <CardActions style={{borderTop: "1px solid " + Colors.grey300, textAlign: "right"}}>
             <FlatButton label="MORE" onClick={this.showModal}/>
           </CardActions>
 
