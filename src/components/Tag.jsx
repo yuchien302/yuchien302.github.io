@@ -16,11 +16,12 @@ var Tag = React.createClass({
       color: "white",
       padding: "3px 5px",
       borderRadius: "3px",
-      fontSize: "10px",
+      fontSize: "14px",
       marginRight: "5px"
     }
+ 
     return (
-      <span style={style}>{this.props.title}</span>
+      <li style={{display: "inline-block", marginBottom: "5px"}}><span style={style}>{this.props.title}</span></li>
     );
   }
 });

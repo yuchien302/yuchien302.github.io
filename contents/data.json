@@ -1,0 +1,63 @@
+{
+  "tags": {
+    "0": {
+      "description": "Web App",
+      "type": "category"
+    },
+    "1": {
+      "description": "React.js",
+      "type": "tech"
+    },
+    "2": {
+      "description": "Node.js",
+      "type": "tech"
+    },
+    "4": {
+      "description": "Brackets Extention",
+      "type": "category"
+    }
+  },
+  "projects": [
+    {
+      "title": "BaseSystem",
+      "subtitle": "Computer asset aggregator",
+      "img": "/dist/images/basesystem.jpg",
+      "description": "Build a physical gaming product using Arduino, Pumpspark Fountain Development Kit, python. Won 1st Creativity at ACM UIST‘13 Student Innovation Contest",
+      "markdown": "BaseSystem",
+      "tags": ["0", "1"]
+    },
+    {
+      "title": "USBAlarmSystem",
+      "subtitle": "Monitoring unauthorized flash drive usage",
+      "img": "/dist/images/usbsystem.jpg",
+      "description": "Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen",
+      "markdown": "USBAlarmSystem",
+      "tags": ["0", "1", "2"]
+    },
+    {
+      "title": "SeeSS",
+      "subtitle": "Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)",
+      "img": "/dist/images/seess.png",
+      "description": "Published at UIST '13 Proceedings of the 26th annual ACM symposium on User interface software and technology",
+      "markdown": "SeeSS",
+      "video": "<iframe width='100%' height='315' src='https://www.youtube.com/embed/DABt2poDiI8' frameborder='0' allowfullscreen></iframe>",
+      "tags": ["4", "1", "2"]
+    },
+    {
+      "title": "WaterIraIra",
+      "subtitle": "Monitoring unauthorized flash drive usage",
+      "img": "/dist/images/wateriraira.png",
+      "description": "Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen",
+      "markdown": "WaterIraIra",
+      "tags": ["0", "1", "2"]
+    },
+    {
+      "title": "WonderLens",
+      "subtitle": "Monitoring unauthorized flash drive usage",
+      "img": "/dist/images/wonderlens.png",
+      "description": "Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen",
+      "markdown": "WonderLens",
+      "tags": ["0", "1", "2"]
+    } 
+  ]
+}
