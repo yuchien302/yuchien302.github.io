@@ -37,7 +37,7 @@ var Projects = React.createClass({
     })
 
     return (
-      <div style={{margin: "0 4px"}}>
+      <div style={{margin: "0 4px", paddingTop: "24px", height: "1000px", overflow: "hidden"}}>
         <Grid>
           <Row>
             <Masonry>

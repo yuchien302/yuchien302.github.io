@@ -8,8 +8,8 @@ var AboutMe = React.createClass({
   render: function() {
     return (
 
-      <div>
-        <h2>[2015-2016] Cornell Tech at Cornell University</h2>
+      <div style={{paddingTop: "24px", height: "1000px", overflow: "hidden"}}>
+        <h2 style={{padding: 0, margin: 0}}>[2015-2016] Cornell Tech at Cornell University</h2>
             Master of Engineering in Computer Science (Expected May 2016) 
             Simons Graduate Fellowship
 

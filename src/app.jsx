@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Colors = require('material-ui/lib/styles/colors');
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -7,7 +8,7 @@ injectTapEventPlugin();
 // Material-UI
 var Tab = require('material-ui/lib/tabs/tab');
 var Tabs = require('material-ui/lib/tabs/tabs');
-var SwipeableViews = require('./components/lib/SwipeableViews.js');
+var SwipeableViews = require('./components/lib/SwipeableViews.jsx');
 var ThemeManager = require('material-ui/lib/styles/theme-manager');
 
 // My Components
@@ -17,6 +18,8 @@ var Header = require('./components/Header.jsx');
 var Projects = require('./components/Projects.jsx');
 var AboutMe = require('./components/AboutMe.jsx');
 var HireMe = require('./components/HireMe.jsx');
+
+
 
 var App = React.createClass({
   childContextTypes: {
@@ -29,79 +32,101 @@ var App = React.createClass({
     };
   },
   getInitialState: function() {
-    return {slideIndex: 0, sticky: false, prevScrollTop: 0};
-  },
-  shouldComponentUpdate: function(nextProps, nextState){
-    return (this.state.slideIndex !== nextState.slideIndex) || (this.state.sticky !== nextState.sticky)
+    return {slideIndex: 0, sticky: false};
   },
   onChangeTabs: function(value) {
     var index = parseInt(value, 10)
-    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
+    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
     this.setState({
-      slideIndex: parseInt(value, 10), sticky: sticky
+      slideIndex: parseInt(value, 10) //, sticky: sticky
     });
   },
   onChangeIndex: function(index) {
-    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
+    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
     this.setState({
-      slideIndex: index, sticky: sticky
+      slideIndex: index //, sticky: sticky
     });
   }, 
   componentDidMount: function() {
-    document.documentElement.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   },
 
   componentWillUnmount: function() {
-    document.documentElement.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   },
-
-  onScrollSlide: function(e){
-    var scrollTop = e.target.scrollTop;
-
-    if( scrollTop > 10 && (scrollTop - this.state.prevScrollTop) > 0 && !this.state.sticky){
+  handleScroll: function(e){
+    if(window.pageYOffset >= 450 && this.state.sticky == false){
       this.setState({
-        sticky: true, prevScrollTop: scrollTop
+        sticky: true
       });
-    } else if( scrollTop <= 100 && (scrollTop - this.state.prevScrollTop) < 0 && this.state.sticky){
+    } 
+    else if (window.pageYOffset < 450 && this.state.sticky == true){
       this.setState({
-        sticky: false, prevScrollTop: scrollTop
-      });
-    } else{
-      this.setState({
-        prevScrollTop: scrollTop
+        sticky: false
       });
     }
   },
+
   render: function() {
-    style = {position: "fixed", width: "100%", zIndex: 10, transition: "0.3s"}
+    var styles = {
+      swipeable_views: {
+        root: {
+          overflowX: 'hidden',
+        },
+        container: {
+          display: '-webkit-box; display: flex',
+        },
+        slide: {
+          width: '100%',
+          flexShrink: 0,
+          
+          overflow: 'auto',
+          overflowScrolling: 'touch',
+          WebkitOverflowScrolling: "touch",
+          willChange: 'transform',          
+          background: "#EEE"
+        }
+      },
+      header: {
+        position: "relative", 
+        height: "498px",
+        width: "100%", 
+        backgroundColor: "white",
+        zIndex: 10
+      },
+      tabs:{
+        position: "fixed", 
+        top: -56, 
+        transition: "all 0.3s, position 1ms",
+        width:"100%",
+        zIndex: 15,
+        boxShadow: "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)"
+      }
+    };
     
     if(this.state.sticky){
-      style.boxShadow = "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)"
-      style.top = "-100px"
-    } else {
-      style.boxShadow = "none"
-      style.top = "-10px"
+      styles.tabs.top = 0;
     }
+
     return (
 
-      <div style={{height: "100%"}}>
-        <div style={style}>
-          <div style={{height: "100px", backgroundImage: "url('/src/images/bg2.jpg')", backgroundAttachment:"fixed", backgroundSize: "cover",
-            paddingTop: "36px", paddingLeft: "50px" }}>
-            <h2 style={{color: "white", margin: 0, padding: 0}}>Yu-Chien Chan</h2>
-          </div>
-          <Tabs onChange={this.onChangeTabs} value={this.state.slideIndex + ''}>
-            <Tab label="Projects" value="0" />
-            <Tab label="About Me" value="1" />
-            <Tab label="Hire Me" value="2" />
-          </Tabs>
+      <div>
+        <div style={styles.header}>
+          <Header onChangeTabs={this.onChangeTabs} slideIndex={this.state.slideIndex + ''}/>
         </div>
 
-        <SwipeableViews ref="swipeview" onScrollSlide={this.onScrollSlide} index={this.state.slideIndex} onChangeIndex={this.onChangeIndex} resistance={true}>
+        <Tabs style={styles.tabs} onChange={this.onChangeTabs} value={this.state.slideIndex + ''}>
+          <Tab label="Projects" value="0" />
+          <Tab label="About Me" value="1" />
+          <Tab label="Hire Me" value="2" />
+        </Tabs>
+        
+        <SwipeableViews styles={styles.swipeable_views} ref="swipeview" index={this.state.slideIndex} onChangeIndex={this.onChangeIndex} resistance={true}>
           <Projects ref="0"/>
           <AboutMe ref="1"/>
           <HireMe ref="2"/>
         </SwipeableViews>
+        
       </div>
     );
   }
