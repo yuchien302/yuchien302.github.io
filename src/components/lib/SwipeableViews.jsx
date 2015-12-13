@@ -26,25 +26,19 @@ var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var styles = {
-  root: {
-    overflowX: 'hidden',
-    height: '100%'
-  },
-  container: {
-    display: '-webkit-box; display: flex',
-    height: '100%'
-  },
-  slide: {
-    width: '100%',
-    flexShrink: 0,
-    overflow: 'scroll',
-    willChange: 'transform',
-    height: '100%',
-    WebkitOverflowScrolling: "touch",
-    paddingTop: "170px"
-  }
-};
+// const styles = {
+//   root: {
+//     overflowX: 'hidden',
+//   },
+//   container: {
+//     display: '-webkit-box; display: flex',
+//   },
+//   slide: {
+//     width: '100%',
+//     flexShrink: 0,
+//     overflow: 'auto',
+//   },
+// };
 
 var resistanceCoef = 0.7;
 
@@ -77,6 +71,13 @@ var SwipeableViews = _react2['default'].createClass({
     onScrollSlide: _react2['default'].PropTypes.func,
 
     /**
+     * This is callback prop. It's called by the
+     * component when the slide switching.
+     * This is useful when you want to implement something corresponding to the current slide position.
+     */
+    onSwitching: _react2['default'].PropTypes.func,
+
+    /**
      * If true, it will add bounds effect on the edges.
      */
     resistance: _react2['default'].PropTypes.bool,
@@ -107,7 +108,8 @@ var SwipeableViews = _react2['default'].createClass({
       index: this.props.index,
       indexLatest: this.props.index,
       isDragging: false,
-      isFirstRender: true
+      isFirstRender: true,
+      heightLatest: 0
     };
   },
   componentDidMount: function componentDidMount() {
@@ -125,7 +127,6 @@ var SwipeableViews = _react2['default'].createClass({
       });
     }
   },
-  slides: [],
   handleTouchStart: function handleTouchStart(event) {
     var touch = event.touches[0];
 
@@ -175,6 +176,10 @@ var SwipeableViews = _react2['default'].createClass({
       }
     }
 
+    if (this.props.onSwitching) {
+      this.props.onSwitching(index);
+    }
+
     this.setState({
       isDragging: true,
       index: index
@@ -217,19 +222,28 @@ var SwipeableViews = _react2['default'].createClass({
       isDragging: false
     });
 
+    if (this.props.onSwitching) {
+      this.props.onSwitching(indexNew);
+    }
+
     if (this.props.onChangeIndex && indexNew !== this.startIndex) {
-      this.props.onChangeIndex(indexNew);
+      this.props.onChangeIndex(indexNew, this.startIndex);
     }
   },
-  getHeightSlide: function getHeightSlide(index) {
-    var slide = this.slides[index];
-    if (slide !== undefined) {
-      var child = slide.children[0];
-      if (child !== undefined) {
-        return child.clientHeight;
+  updateHeight: function updateHeight(ref, index) {
+    if (ref !== null && index === this.state.indexLatest) {
+      var style = this.props.style;
+
+      // There is no point to animate if we already provide a height
+      if (!style || !style.height) {
+        var child = ref.children[0];
+        if (child !== undefined && this.state.heightLatest !== child.offsetHeight) {
+          this.setState({
+            heightLatest: child.offsetHeight
+          });
+        }
       }
     }
-    return 0;
   },
   renderContainer: function renderContainer(interpolatedStyle) {
     var _this = this;
@@ -237,9 +251,9 @@ var SwipeableViews = _react2['default'].createClass({
     var _props = this.props;
     var children = _props.children;
     var style = _props.style;
+    var styles = _props.styles;
     var isFirstRender = this.state.isFirstRender;
 
-    this.slides = [];
     var childrenToRender = undefined;
 
     childrenToRender = _react2['default'].Children.map(children, function (element, i) {
@@ -250,7 +264,7 @@ var SwipeableViews = _react2['default'].createClass({
       return _react2['default'].createElement(
         'div',
         { ref: function (s) {
-            return _this.slides[i] = s;
+            return _this.updateHeight(s, i);
           }, style: styles.slide, onScroll: _this.props.onScrollSlide },
         element
       );
@@ -264,7 +278,7 @@ var SwipeableViews = _react2['default'].createClass({
           WebkitTransform: 'translate3d(' + translate + '%, 0, 0)',
           transform: 'translate3d(' + translate + '%, 0, 0)',
           height: interpolatedStyle.height
-        }, styles.container, style)},
+        }, styles.container, style) },
       childrenToRender
     );
   },
@@ -273,19 +287,15 @@ var SwipeableViews = _react2['default'].createClass({
 
     var _props2 = this.props;
     var disabled = _props2.disabled;
-    var style = _props2.style;
+    var styles = _props2.styles;
     var _state = this.state;
     var index = _state.index;
-    var indexLatest = _state.indexLatest;
     var isDragging = _state.isDragging;
+    var heightLatest = _state.heightLatest;
 
     var translate = index * 100;
 
-    var height = 0;
-    // There is no point to animate if we already provide a height
-    if (!style || !style.height) {
-      height = this.getHeightSlide(indexLatest);
-    }
+    var height = heightLatest;
 
     var motionStyle = isDragging ? {
       translate: translate,
