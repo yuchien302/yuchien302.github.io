@@ -10,7 +10,17 @@
   },
   "dependencies": {
     "autoresponsive-react": "^1.1.8",
-    "react-masonry-component": "^2.0.0"
+    "bulkify": "^1.1.1",
+    "react-masonry-component": "^2.0.0",
+    "react-material-icons": "^1.0.1",
+    "react-responsive-carousel": "^2.0.2",
+    "react-sticky": "^3.0.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.0",
+    "remarkable": "^1.6.1",
+    "stringify": "^3.2.0",
+    "vivus": "^0.2.3"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.6",
