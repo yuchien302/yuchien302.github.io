@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var objectAssign = require('object-assign');
 var Colors = require('material-ui/lib/styles/colors');
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
@@ -35,36 +36,30 @@ var App = React.createClass({
     return {slideIndex: 0, sticky: false};
   },
   onChangeTabs: function(value) {
-    var index = parseInt(value, 10)
-    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
+    // var index = parseInt(value, 10)
+    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 12
     this.setState({
       slideIndex: parseInt(value, 10) //, sticky: sticky
     });
   },
   onChangeIndex: function(index) {
-    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 10
+    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 12
     this.setState({
       slideIndex: index //, sticky: sticky
     });
   }, 
-  componentDidMount: function() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-
-  componentWillUnmount: function() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
-  handleScroll: function(e){
-    if(window.pageYOffset >= 450 && this.state.sticky == false){
+  onScrollSlide: function(e){
+    // console.log(e.target.scrollTop)
+    if(e.target.scrollTop > 12 && !this.state.sticky){
       this.setState({
         sticky: true
       });
-    } 
-    else if (window.pageYOffset < 450 && this.state.sticky == true){
+    } else if(e.target.scrollTop <= 12 && this.state.sticky){
       this.setState({
         sticky: false
       });
     }
+    
   },
 
   render: function() {
@@ -72,48 +67,57 @@ var App = React.createClass({
       swipeable_views: {
         root: {
           overflowX: 'hidden',
+          height: '100%',
         },
         container: {
           display: '-webkit-box; display: flex',
+          height: '100%',
         },
         slide: {
-          width: '100%',
+          width: '100vw',
+          height: '100%',
           flexShrink: 0,
           
-          overflow: 'auto',
+          overflow: 'scroll',
           overflowScrolling: 'touch',
           WebkitOverflowScrolling: "touch",
           willChange: 'transform',          
-          background: "#EEE"
+          backgroundColor: Colors.grey200
         }
       },
-      header: {
-        position: "relative", 
-        height: "498px",
-        width: "100%", 
-        backgroundColor: "white",
-        zIndex: 10
-      },
+
       tabs:{
         position: "fixed", 
-        top: -56, 
+        top: 0, 
         transition: "all 0.3s, position 1ms",
-        width:"100%",
+        width:"100vw",
         zIndex: 15,
-        boxShadow: "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)"
+      },
+      default_tab:{
+        color: Colors.grey500,
+        backgroundColor: Colors.grey50,
+        fontWeight: 400,
+      },
+      active_tab:{
+        color: Colors.deepOrange700,
       }
     };
     
     if(this.state.sticky){
       styles.tabs.top = 0;
+      styles.tabs.boxShadow = "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)";
     }
+
+
+    styles.tab = []
+    styles.tab[0] = styles.default_tab;
+    styles.tab[1] = styles.default_tab;
+    styles.tab[2] = styles.default_tab;
+    styles.tab[this.state.slideIndex] = objectAssign({}, styles.tab[this.state.slideIndex], styles.active_tab);
 
     return (
 
-      <div>
-        <div style={styles.header}>
-          <Header onChangeTabs={this.onChangeTabs} slideIndex={this.state.slideIndex + ''}/>
-        </div>
+      <div style={{marginTop: "48px", height: "calc(100% - 48px)"}}>
 
         <Tabs style={styles.tabs} onChange={this.onChangeTabs} value={this.state.slideIndex + ''}>
           <Tab style={styles.tab[0]} label="ABOUT ME" value="0" />
@@ -121,12 +125,13 @@ var App = React.createClass({
           <Tab style={styles.tab[2]} label="ARTICLES" value="2" />
         </Tabs>
         
-        <SwipeableViews styles={styles.swipeable_views} ref="swipeview" index={this.state.slideIndex} onChangeIndex={this.onChangeIndex} resistance={true}>
+      
+
+        <SwipeableViews styles={styles.swipeable_views} ref="swipeview" onScrollSlide={this.onScrollSlide} index={this.state.slideIndex} onChangeIndex={this.onChangeIndex} resistance={true}>
           <AboutMe ref="0"/>
           <Projects ref="1"/>
           <Articles ref="2"/>
         </SwipeableViews>
-        
       </div>
     );
   }

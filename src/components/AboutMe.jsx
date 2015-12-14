@@ -1,50 +1,61 @@
 var React = require('react');
 
-var RaisedButton = require('material-ui/lib/raised-button');
-var FlatButton = require('material-ui/lib/flat-button');
+// Twitter Bootstrap
+var Grid = require('react-bootstrap/lib/Grid');
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
+
+var style = {
+  header: {
+    height: "360px", 
+    backgroundImage: "url('/src/images/bg5.jpg')", 
+    // backgroundAttachment:"fixed", 
+    backgroundSize: "cover",
+    backgroundPosition:"center bottom",
+    width: "100%"
+  },
+  subheader: {
+    height: "198px", 
+    position: "relative",
+    marginTop: "-60px",
+    // background: "white"
+  },  
+  avatar: {
+    width: 150,
+    borderRadius: "100%",
+    border: "4px solid white"
+  },
+  desc: {
+
+  }
+}
+
 
 var AboutMe = React.createClass({
 
   render: function() {
     return (
 
-      <div style={{paddingTop: "24px", height: "1000px", overflow: "hidden"}}>
-        <h2 style={{padding: 0, margin: 0}}>[2015-2016] Cornell Tech at Cornell University</h2>
-            Master of Engineering in Computer Science (Expected May 2016) 
-            Simons Graduate Fellowship
+      <div>
 
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
+        <div style={style.header}>
+        </div>
+        <div style={style.subheader}>
+          <Grid>
+            <Row>
 
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
-        <h2>[2015-2016] Cornell Tech at Cornell University</h2>
-            Master of Engineering in Computer Science (Expected May 2016) 
-            Simons Graduate Fellowship
+              <Col xs={12} sm={3} md={2} style={{textAlign: "center"}}>
+                <img style={style.avatar} src="/src/images/yuchien.jpg"/>
+              </Col>
 
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
-
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
-
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
-
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
-
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
-
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
-        <h2>[2010-2014] National Taiwan University(NTU)</h2>
-
-            Bachelor of Science in Electrical Engineering
-            GPA: 4.03/4.3 among 19 computer science courses includes: Operating Systems, Algorithms, Advanced Computer Programming, Machine Learning
+              <Col xs={12} sm={9} md={10}>
+                <h2 style={{color: "white", padding: 0}}>Yu Chien Chan</h2>
+                <h4 style={style.desc}>Master in CS at Cornell University (Expected May 2016)</h4>
+                <h4>Full-stack Developer</h4>
+              </Col>              
+            </Row>
+          </Grid>
+        </div>
 
       </div>
     );
