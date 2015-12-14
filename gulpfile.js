@@ -18,10 +18,11 @@ gulp.task('default', ['sass', 'js'], function() {
 
   gulp.watch("./src/style/*.sass", ['sass']);
 
+  gulp.watch("./src/App.jsx", ['js']);
   gulp.watch("./src/components/*.jsx", ['js']);
   gulp.watch("./src/components/lib/*.jsx", ['js']);
   gulp.watch("./contents/*", ['js']);
-  gulp.watch("./src/App.jsx", ['js']);
+  
 
   gulp.watch("*.html").on('change', browserSync.reload);
 });
