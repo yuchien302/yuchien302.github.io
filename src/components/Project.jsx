@@ -24,7 +24,7 @@ var md = new Remarkable('commonmark');
 var Tag = require('./Tag.jsx')
 var style = {
   root:{
-    marginBottom: 16
+    marginBottom: 18
   },
   tags:{
     listStyle: "none",
