@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = "#### Problems####\n\n\nWorking at security operating center (SOC) means we have to \nWith the need of acquiring information from any given Intranet IP when monitoring network traffic and virus incident, I built BaseSystem that aggregate data from asset management system, anti-virus management console, Windows <span style=\"color:red\">Server</span> Update Services, and excel file of internal phone book. On top of that, I use NodeJS, ReactJS and Flux to provide a Web Interface.\n\nThis system has been used on an hourly basis from all the member in Security Operation Center. The amount of time to gather same amount of information given an IP has been reduced from ~5 minutes to less then 3 sec.\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/DABt2poDiI8\" frameborder=\"0\" allowfullscreen></iframe>\n\n\n#### Challenge ####\n\n#### My Roles ####\n\n\n#### Mistake/Failures ####\n<!-- ![detail view of computer](/src/images/basesystem2.jpg \"Optional title\") -->\n\n\n\n#### Enjoyed ####\n\n\n#### Conflicts ####\n\n#### What'd you do differently ####\n\n";
+module.exports = "#### Problems ####\n\n\nWorking at security operating center (SOC) means we have to \nWith the need of acquiring information from any given Intranet IP when monitoring network traffic and virus incident, I built BaseSystem that aggregate data from asset management system, anti-virus management console, Windows <span style=\"color:red\">Server</span> Update Services, and excel file of internal phone book. On top of that, I use NodeJS, ReactJS and Flux to provide a Web Interface.\n\nThis system has been used on an hourly basis from all the member in Security Operation Center. The amount of time to gather same amount of information given an IP has been reduced from ~5 minutes to less then 3 sec.\n\n\n\n#### Challenge ####\n\n#### My Roles ####\n\n\n#### Mistake/Failures ####\n<!-- ![detail view of computer](/src/images/basesystem2.jpg \"Optional title\") -->\n\n\n\n#### Enjoyed ####\n\n\n#### Conflicts ####\n\n#### What'd you do differently ####\n\n";
 
 },{}],2:[function(require,module,exports){
 module.exports = "#### Origins ####\n\nWith the need of acquiring information from any given Intranet IP when monitoring network traffic and virus incident, I built BaseSystem that aggregate data from asset management system, anti-virus management console, Windows Server Update Services, and excel file of internal phone book. On top of that, I use NodeJS, ReactJS and Flux to provide a Web Interface.\n\nThis system has been used on an hourly basis from all the member in Security Operation Center. The amount of time to gather same amount of information given an IP has been reduced from ~5 minutes to less then 3 sec.";
@@ -45658,16 +45658,45 @@ module.exports = AboutMe;
 },{"react":385,"react-bootstrap/lib/Col":202,"react-bootstrap/lib/Grid":204,"react-bootstrap/lib/Row":211}],450:[function(require,module,exports){
 var React = require('react');
 
+
+// Twitter Bootstrap
+var Grid = require('react-bootstrap/lib/Grid');
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
+
+// Masonry
+var Masonry = require('react-masonry-component')(React);
+var masonryOptions = {
+    transitionDuration: 0
+};
+
 var Articles = React.createClass({displayName: "Articles",
   render: function() {
     return (
-      React.createElement("div", {style: {paddingTop: "28px"}}, 
-        React.createElement("h2", {style: {padding: 0, margin: 0}}, "You should hire me!"), 
-            "• General Purpose: Python, C++, Matlab, Haskell, Java, Ruby" + ' ' +
-            "• Web General: CoffeeScript, CSS/Sass/Compass, Ruby on Rails, AWS, Heroku" + ' ' +
-            "• Javascript related: ReactJS, BackboneJS, jQuery, NodeJS, AngularJS" + ' ' +
-            "• Visualization: processing, D3.js, OpenGL" + ' ' +
-            "• Others: Swift, Objective-C, Git, LATEX, Arduino, bash, MSSQL, MongoDB"
+
+      React.createElement("div", {style: {margin: "0 4px", paddingTop: "28px"}}, 
+        React.createElement(Grid, null, 
+          React.createElement(Row, null, 
+            React.createElement(Masonry, null, 
+              React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
+                React.createElement("a", {className: "m-profile", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/@yuchien"}, "Yu-Chien Chan"), React.createElement("br", null)
+              ), 
+
+              React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
+                React.createElement("a", {className: "m-story", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/@yuchien/test-716e20a2930a"}, "Test"), React.createElement("br", null)
+              ), 
+
+              React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
+                React.createElement("a", {className: "m-story", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/@ReactJS_News/react-vs-angularjs-how-the-two-compare-reactjs-news-reactjs-news-angularjs-news-9122c70d240f"}, "React vs AngularJS — How the two Compare — ReactJS News — ReactJS News — AngularJS News"), React.createElement("br", null)
+              ), 
+
+              React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
+                React.createElement("a", {className: "m-story", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/keep-learning-keep-growing/the-answer-is-yes-4de724503e6"}, "The Answer is Yes"), React.createElement("br", null)
+              )
+            )
+          )
+        )
+        
       )
     );
   }
@@ -45675,7 +45704,7 @@ var Articles = React.createClass({displayName: "Articles",
 
 module.exports = Articles;
 
-},{"react":385}],451:[function(require,module,exports){
+},{"react":385,"react-bootstrap/lib/Col":202,"react-bootstrap/lib/Grid":204,"react-bootstrap/lib/Row":211,"react-masonry-component":216}],451:[function(require,module,exports){
 var Colors = require('material-ui/lib/styles/colors');
 var ColorManipulator = require('material-ui/lib/utils/color-manipulator');
 var Spacing = require('material-ui/lib/styles/spacing');
@@ -45731,6 +45760,9 @@ var style = {
     listStyle: "none",
     margin: 0,
     padding: 0
+  },
+  card:{
+    borderRadius: 5
   }
 };
     
@@ -45755,7 +45787,7 @@ var Project = React.createClass({displayName: "Project",
 
     return (
       React.createElement("div", {style: style.root}, 
-        React.createElement(Card, null, 
+        React.createElement(Card, {style: style.card}, 
           React.createElement(CardTitle, {title: this.props.project.title, subtitle: this.props.project.subtitle}), 
           React.createElement(CardMedia, null, 
             media
