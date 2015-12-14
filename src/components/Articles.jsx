@@ -14,22 +14,8 @@ var masonryOptions = {
 
 var Articles = React.createClass({
     
-  onclick: function(e){
-    var a0 = ReactDOM.findDOMNode(this.refs["a0"])
-    a0.style.pointerEvents = "none";
-    setTimeout(function(){
-      a0.style.pointerEvents = "all";
-    }, 1000)
-  },
-
   render: function() {
-    var styles = {
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      top: 0,
-      pointerEvents: "all",
-    }
+
     return (
 
       <div style={{margin: "0 4px", paddingTop: "28px"}}>
@@ -37,12 +23,7 @@ var Articles = React.createClass({
           <Row>
             <Masonry>
               <Col xs={12} sm={6} md={4}>
-                <div>
-                  <a className="m-profile" data-collapsed="false" data-width="100%" href="https://medium.com/@yuchien">Yu-Chien Chan</a>
-                  <div style={styles} onClick={this.onclick} ref="a0">
-                  </div>
-                </div>
-                <br/>
+                <a className="m-profile" data-collapsed="false" data-width="100%" href="https://medium.com/@yuchien">Yu-Chien Chan</a><br/>
               </Col> 
 
               <Col xs={12} sm={6} md={4}>
