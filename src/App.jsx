@@ -17,7 +17,7 @@ var Header = require('./components/Header.jsx');
 
 var Projects = require('./components/Projects.jsx');
 var AboutMe = require('./components/AboutMe.jsx');
-var HireMe = require('./components/HireMe.jsx');
+var Articles = require('./components/Articles.jsx');
 
 
 
@@ -116,15 +116,15 @@ var App = React.createClass({
         </div>
 
         <Tabs style={styles.tabs} onChange={this.onChangeTabs} value={this.state.slideIndex + ''}>
-          <Tab label="Projects" value="0" />
-          <Tab label="About Me" value="1" />
-          <Tab label="Hire Me" value="2" />
+          <Tab style={styles.tab[0]} label="ABOUT ME" value="0" />
+          <Tab style={styles.tab[1]} label="PROJECTS" value="1" />
+          <Tab style={styles.tab[2]} label="ARTICLES" value="2" />
         </Tabs>
         
         <SwipeableViews styles={styles.swipeable_views} ref="swipeview" index={this.state.slideIndex} onChangeIndex={this.onChangeIndex} resistance={true}>
-          <Projects ref="0"/>
-          <AboutMe ref="1"/>
-          <HireMe ref="2"/>
+          <AboutMe ref="0"/>
+          <Projects ref="1"/>
+          <Articles ref="2"/>
         </SwipeableViews>
         
       </div>
