@@ -16,10 +16,10 @@ var PlaceIcon = require('react-material-icons/icons/maps/place');
 var style = {
   header: {
     height: "360px", 
-    backgroundImage: "url('/src/images/bg4.jpg')", 
+    backgroundImage: "url('/src/images/bg5.jpg')", 
     // backgroundAttachment:"fixed", 
     backgroundSize: "cover",
-    backgroundPosition:"center center",
+    backgroundPosition:"center bottom",
     width: "100%"
   },
   subheader: {
