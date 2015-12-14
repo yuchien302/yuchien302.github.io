@@ -1,20 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var objectAssign = require('object-assign');
-var Colors = require('material-ui/lib/styles/colors');
-
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
 // Material-UI
 var Tab = require('material-ui/lib/tabs/tab');
 var Tabs = require('material-ui/lib/tabs/tabs');
-var SwipeableViews = require('./components/lib/SwipeableViews.jsx');
+var Colors = require('material-ui/lib/styles/colors');
 var ThemeManager = require('material-ui/lib/styles/theme-manager');
 
 // My Components
 var MyTheme = require('./components/MyTheme.jsx');
-var Header = require('./components/Header.jsx');
+var SwipeableViews = require('./components/lib/SwipeableViews.jsx');
 
 var Projects = require('./components/Projects.jsx');
 var AboutMe = require('./components/AboutMe.jsx');
@@ -36,20 +34,19 @@ var App = React.createClass({
     return {slideIndex: 0, sticky: false};
   },
   onChangeTabs: function(value) {
-    // var index = parseInt(value, 10)
-    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 12
+    var index = parseInt(value, 10)
+    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 12
     this.setState({
-      slideIndex: parseInt(value, 10) //, sticky: sticky
+      slideIndex: parseInt(value, 10), sticky: sticky
     });
   },
   onChangeIndex: function(index) {
-    // var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 12
+    var sticky = ReactDOM.findDOMNode(this.refs["swipeview"]).children[0].children[index].scrollTop > 12
     this.setState({
-      slideIndex: index //, sticky: sticky
+      slideIndex: index, sticky: sticky
     });
   }, 
   onScrollSlide: function(e){
-    // console.log(e.target.scrollTop)
     if(e.target.scrollTop > 12 && !this.state.sticky){
       this.setState({
         sticky: true
@@ -59,7 +56,6 @@ var App = React.createClass({
         sticky: false
       });
     }
-    
   },
 
   render: function() {
@@ -101,13 +97,13 @@ var App = React.createClass({
       active_tab:{
         color: Colors.deepOrange700,
       }
+
     };
     
     if(this.state.sticky){
       styles.tabs.top = 0;
-      styles.tabs.boxShadow = "0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)";
+      styles.tabs.boxShadow = "0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28)";
     }
-
 
     styles.tab = []
     styles.tab[0] = styles.default_tab;
@@ -124,14 +120,13 @@ var App = React.createClass({
           <Tab style={styles.tab[1]} label="PROJECTS" value="1" />
           <Tab style={styles.tab[2]} label="ARTICLES" value="2" />
         </Tabs>
-        
-      
 
         <SwipeableViews styles={styles.swipeable_views} ref="swipeview" onScrollSlide={this.onScrollSlide} index={this.state.slideIndex} onChangeIndex={this.onChangeIndex} resistance={true}>
           <AboutMe ref="0"/>
           <Projects ref="1"/>
           <Articles ref="2"/>
         </SwipeableViews>
+        
       </div>
     );
   }
