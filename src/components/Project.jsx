@@ -30,6 +30,9 @@ var style = {
     listStyle: "none",
     margin: 0,
     padding: 0
+  },
+  card:{
+    borderRadius: 5
   }
 };
     
@@ -54,7 +57,7 @@ var Project = React.createClass({
 
     return (
       <div style={style.root}>
-        <Card>
+        <Card style={style.card}>
           <CardTitle title={this.props.project.title} subtitle={this.props.project.subtitle} />
           <CardMedia>
             {media}
