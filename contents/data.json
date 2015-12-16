@@ -11,7 +11,7 @@
     {
       "title": "Flap",
       "subtitle": "Friends create videos together in a fun simple way",
-      "img": "/src/images/flap.png",
+      "img": "/src/images/flap@2x.jpg",
       "description": "Cornell Tech's Company Challenge from Fly Labs: How might we enable people to get creative with video in new ways?",
       "markdown": "Flap",
       "tags": ["c.Course Project", "c.iOS App", "t.Swift"]
@@ -20,7 +20,7 @@
       "title": "CashLess",
       "date": "October, 2015",
       "subtitle": "QR Code Mobile Payment",
-      "img": "/src/images/cashless.png",
+      "img": "/src/images/cashless@2x.jpg",
       "description": "Fintech Hackathon",
       "markdown": "CashLess",
       "tags": ["c.Hackathon", "c.iOS App", "t.Swift"]
@@ -28,7 +28,7 @@
     {
       "title": "Leetcode OJ",
       "subtitle": "Algorithms and Data Structure Challenge",
-      "img": "/src/images/leetcode.png",
+      "img": "/src/images/leetcode@2x.jpg",
       "description": "Learning Python through practicing challenges",
       "markdown": "ComputerGraphics",
       "tags": ["c.Competitive Programming", "t.Python"]
@@ -44,7 +44,7 @@
     {
       "title": "Project Euler",
       "subtitle": "Algorithms and Data Structure Challenge",
-      "img": "/src/images/euler.png",
+      "img": "/src/images/euler@2x.jpg",
       "description": "Learning Haskell through practicing challenges",
       "markdown": "ComputerGraphics",
       "tags": ["c.Competitive Programming", "t.Haskell"]
@@ -52,7 +52,7 @@
     {
       "title": "USBAlarmSystem",
       "subtitle": "Monitoring unauthorized flash drive usage",
-      "img": "/dist/images/usbsystem.jpg",
+      "img": "/src/images/usbsystem@2x.jpg",
       "description": "A real time alarming web interface for unauthorized USB usage. Deployed on always-on surveillance screen",
       "markdown": "USBAlarmSystem",
       "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"]
@@ -60,7 +60,7 @@
     {
       "title": "WonderLens",
       "subtitle": "Optical Lenses and Mirrors for Tangible Interactions on Printed Paper",
-      "img": "/dist/images/wonderlens.png",
+      "img": "/src/images/wonderlens@2x.jpg",
       "description": "Published at ACM CHI '15",
       "markdown": "WonderLens",
       "tags": ["c.HCI", "t.Arduino", "t.GaussSense"]
@@ -68,7 +68,7 @@
     {
       "title": "SeeSS",
       "subtitle": "Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)",
-      "img": "/dist/images/seess.png",
+      "img": "/src/images/seess@2x.jpg",
       "description": "Published at ACM UIST '13",
       "markdown": "SeeSS",
       "video": "<iframe width='100%' height='315' src='https://www.youtube.com/embed/DABt2poDiI8' frameborder='0' allowfullscreen></iframe>",
@@ -77,7 +77,7 @@
     {
       "title": "Water IraIra Bou",
       "subtitle": "Don't hit the track & Faster then the blue water!",
-      "img": "/dist/images/wateriraira.png",
+      "img": "/src/images/wateriraira@2x.jpg",
       "description": "1st Creativity Award at ACM UIST‘13 Student Innovation Contest",
       "markdown": "WaterIraIra",
       "tags": ["c.HCI", "t.Arduino", "t.PumpSpark"]

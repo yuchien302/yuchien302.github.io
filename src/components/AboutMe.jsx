@@ -8,7 +8,7 @@ var Col = require('react-bootstrap/lib/Col');
 var style = {
   header: {
     height: "360px", 
-    backgroundImage: "url('/src/images/bg5.jpg')", 
+    backgroundImage: "url('/src/images/bg5@1x.jpg')", 
     // backgroundAttachment:"fixed", 
     backgroundSize: "cover",
     backgroundPosition:"center bottom",
@@ -45,7 +45,7 @@ var AboutMe = React.createClass({
             <Row>
 
               <Col xs={12} sm={3} md={2} style={{textAlign: "center"}}>
-                <img style={style.avatar} src="/src/images/yuchien.jpg"/>
+                <img style={style.avatar} src="/src/images/yuchien@2x.jpg"/>
               </Col>
 
               <Col xs={12} sm={9} md={10}>
