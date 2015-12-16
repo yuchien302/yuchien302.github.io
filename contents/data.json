@@ -1,63 +1,86 @@
 {
-  "tags": {
-    "0": {
-      "description": "Web App",
-      "type": "category"
-    },
-    "1": {
-      "description": "React.js",
-      "type": "tech"
-    },
-    "2": {
-      "description": "Node.js",
-      "type": "tech"
-    },
-    "4": {
-      "description": "Brackets Extention",
-      "type": "category"
-    }
-  },
-  "projects": [
+  "projects": [     
+    {
+      "title": "Computer Graphics",
+      "subtitle": "Cornell CS 5620: Computer Graphics Assignments",
+      "img": "/src/images/cg.png",
+      "description": "Wireframe Renderer, Surface Renderer, Shading Renderer, OpenGL Renderer, OpenGL Animator",
+      "markdown": "ComputerGraphics",
+      "tags": ["c.Course Project", "t.C++", "t.OpenGL"]
+    },    
+    {
+      "title": "Flap",
+      "subtitle": "Friends create videos together in a fun simple way",
+      "img": "/src/images/flap.png",
+      "description": "Cornell Tech's Company Challenge from Fly Labs: How might we enable people to get creative with video in new ways?",
+      "markdown": "Flap",
+      "tags": ["c.Course Project", "c.iOS App", "t.Swift"]
+    }, 
+    {
+      "title": "CashLess",
+      "date": "October, 2015",
+      "subtitle": "QR Code Mobile Payment",
+      "img": "/src/images/cashless.png",
+      "description": "Fintech Hackathon",
+      "markdown": "CashLess",
+      "tags": ["c.Hackathon", "c.iOS App", "t.Swift"]
+    }, 
+    {
+      "title": "Leetcode OJ",
+      "subtitle": "Algorithms and Data Structure Challenge",
+      "img": "/src/images/leetcode.png",
+      "description": "Learning Python through practicing challenges",
+      "markdown": "ComputerGraphics",
+      "tags": ["c.Competitive Programming", "t.Python"]
+    },     
     {
       "title": "BaseSystem",
-      "subtitle": "Computer asset aggregator",
+      "subtitle": "Computer asset status aggregator",
       "img": "/dist/images/basesystem.jpg",
-      "description": "Build a physical gaming product using Arduino, Pumpspark Fountain Development Kit, python. Won 1st Creativity at ACM UIST‘13 Student Innovation Contest",
+      "description": "Self-initiative project during Mandatory Military Service. Reduce tedious task that normally take around 3 mins, to 5 secs",
       "markdown": "BaseSystem",
-      "tags": ["0", "1"]
+      "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"]
     },
+    {
+      "title": "Project Euler",
+      "subtitle": "Algorithms and Data Structure Challenge",
+      "img": "/src/images/euler.png",
+      "description": "Learning Haskell through practicing challenges",
+      "markdown": "ComputerGraphics",
+      "tags": ["c.Competitive Programming", "t.Haskell"]
+    },     
     {
       "title": "USBAlarmSystem",
       "subtitle": "Monitoring unauthorized flash drive usage",
       "img": "/dist/images/usbsystem.jpg",
-      "description": "Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen",
+      "description": "A real time alarming web interface for unauthorized USB usage. Deployed on always-on surveillance screen",
       "markdown": "USBAlarmSystem",
-      "tags": ["0", "1", "2"]
+      "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"]
     },
+    {
+      "title": "WonderLens",
+      "subtitle": "Optical Lenses and Mirrors for Tangible Interactions on Printed Paper",
+      "img": "/dist/images/wonderlens.png",
+      "description": "Published at ACM CHI '15",
+      "markdown": "WonderLens",
+      "tags": ["c.HCI", "t.Arduino", "t.GaussSense"]
+    },    
     {
       "title": "SeeSS",
       "subtitle": "Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)",
       "img": "/dist/images/seess.png",
-      "description": "Published at UIST '13 Proceedings of the 26th annual ACM symposium on User interface software and technology",
+      "description": "Published at ACM UIST '13",
       "markdown": "SeeSS",
       "video": "<iframe width='100%' height='315' src='https://www.youtube.com/embed/DABt2poDiI8' frameborder='0' allowfullscreen></iframe>",
-      "tags": ["4", "1", "2"]
+      "tags": ["c.HCI", "c.Brackets Extention", "t.Sass", "t.CoffeeScript"]
     },
     {
-      "title": "WaterIraIra",
-      "subtitle": "Monitoring unauthorized flash drive usage",
+      "title": "Water IraIra Bou",
+      "subtitle": "Don't hit the track & Faster then the blue water!",
       "img": "/dist/images/wateriraira.png",
-      "description": "Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen",
+      "description": "1st Creativity Award at ACM UIST‘13 Student Innovation Contest",
       "markdown": "WaterIraIra",
-      "tags": ["0", "1", "2"]
-    },
-    {
-      "title": "WonderLens",
-      "subtitle": "Monitoring unauthorized flash drive usage",
-      "img": "/dist/images/wonderlens.png",
-      "description": "Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen",
-      "markdown": "WonderLens",
-      "tags": ["0", "1", "2"]
-    } 
+      "tags": ["c.HCI", "t.Arduino", "t.PumpSpark"]
+    }
   ]
 }
