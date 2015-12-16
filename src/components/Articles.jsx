@@ -27,15 +27,7 @@ var Articles = React.createClass({
               </Col> 
 
               <Col xs={12} sm={6} md={4}>
-                <a className="m-story" data-collapsed="false" data-width="100%" href="https://medium.com/@yuchien/test-716e20a2930a">Test</a><br/>
-              </Col> 
-
-              <Col xs={12} sm={6} md={4}>
-                <a className="m-story" data-collapsed="false" data-width="100%" href="https://medium.com/@ReactJS_News/react-vs-angularjs-how-the-two-compare-reactjs-news-reactjs-news-angularjs-news-9122c70d240f">React vs AngularJS — How the two Compare — ReactJS News — ReactJS News — AngularJS News</a><br/>
-              </Col> 
-
-              <Col xs={12} sm={6} md={4}>
-                <a className="m-story" data-collapsed="false" data-width="100%" href="https://medium.com/keep-learning-keep-growing/the-answer-is-yes-4de724503e6">The Answer is Yes</a><br/>
+                <a className="m-story" data-collapsed="true" href="https://medium.com/shopify-ux/so-you-want-to-be-a-front-end-devleoper-f8be110f1d5f">Using React is a Business Decision, Not a Technology Choice</a><br/>
               </Col> 
             </Masonry>
           </Row>
