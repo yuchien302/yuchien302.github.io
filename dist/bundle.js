@@ -1,14 +1,13 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = "#### Problems ####\n\n\nWorking at security operating center (SOC) means we have to \nWith the need of acquiring information from any given Intranet IP when monitoring network traffic and virus incident, I built BaseSystem that aggregate data from asset management system, anti-virus management console, Windows <span style=\"color:red\">Server</span> Update Services, and excel file of internal phone book. On top of that, I use NodeJS, ReactJS and Flux to provide a Web Interface.\n\nThis system has been used on an hourly basis from all the member in Security Operation Center. The amount of time to gather same amount of information given an IP has been reduced from ~5 minutes to less then 3 sec.\n\n\n\n#### Challenge ####\n\n#### My Roles ####\n\n\n#### Mistake/Failures ####\n<!-- ![detail view of computer](/src/images/basesystem2.jpg \"Optional title\") -->\n\n\n\n#### Enjoyed ####\n\n\n#### Conflicts ####\n\n#### What'd you do differently ####\n\n";
+module.exports = "### Problems ###\n\nGiven an intranet IP address, we always need to gather information by manually login to different systems to get what we want. It was a tedious and time-consuming job that often take around 3 minutes.\n\n### Challenge ###\n\nTiming is the most crucial part of this project. SOC is a busy and challenging place to work, and you only have limited amount of free time because of the nature of Military Service. \n\nMaintainability and Stability are two other things parts, as it is an internal tool, and I won't be able to maintain it after leaving.\n\n### My Roles ###\n\nI am a sole developer in this project. I designed the interface, write Back-end code with NodeJS, Front-end with ReactJS, Flux, and MYSQL task for aggregating data from multiple remote MSSQL.\n\n### Mistake and Failures ###\n\n\n\n### Enjoyed ###\n\n\n### Conflicts ###\n\n### What'd you do differently ###\n<!-- ![detail view of computer](/src/images/basesystem2.jpg \"Optional title\") -->\n";
 
 },{}],2:[function(require,module,exports){
-module.exports = "#### Origins ####\n\nWith the need of acquiring information from any given Intranet IP when monitoring network traffic and virus incident, I built BaseSystem that aggregate data from asset management system, anti-virus management console, Windows Server Update Services, and excel file of internal phone book. On top of that, I use NodeJS, ReactJS and Flux to provide a Web Interface.\n\nThis system has been used on an hourly basis from all the member in Security Operation Center. The amount of time to gather same amount of information given an IP has been reduced from ~5 minutes to less then 3 sec.";
+module.exports = "";
 
 },{}],3:[function(require,module,exports){
-module.exports = "## Hi 2 ##";
-
-},{}],4:[function(require,module,exports){
-module.exports=module.exports = "{\n  \"tags\": {\n    \"0\": {\n      \"description\": \"Web App\",\n      \"type\": \"category\"\n    },\n    \"1\": {\n      \"description\": \"React.js\",\n      \"type\": \"tech\"\n    },\n    \"2\": {\n      \"description\": \"Node.js\",\n      \"type\": \"tech\"\n    },\n    \"4\": {\n      \"description\": \"Brackets Extention\",\n      \"type\": \"category\"\n    }\n  },\n  \"projects\": [\n    {\n      \"title\": \"BaseSystem\",\n      \"subtitle\": \"Computer asset aggregator\",\n      \"img\": \"/dist/images/basesystem.jpg\",\n      \"description\": \"Build a physical gaming product using Arduino, Pumpspark Fountain Development Kit, python. Won 1st Creativity at ACM UIST‘13 Student Innovation Contest\",\n      \"markdown\": \"BaseSystem\",\n      \"tags\": [\"0\", \"1\"]\n    },\n    {\n      \"title\": \"USBAlarmSystem\",\n      \"subtitle\": \"Monitoring unauthorized flash drive usage\",\n      \"img\": \"/dist/images/usbsystem.jpg\",\n      \"description\": \"Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen\",\n      \"markdown\": \"USBAlarmSystem\",\n      \"tags\": [\"0\", \"1\", \"2\"]\n    },\n    {\n      \"title\": \"SeeSS\",\n      \"subtitle\": \"Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)\",\n      \"img\": \"/dist/images/seess.png\",\n      \"description\": \"Published at UIST '13 Proceedings of the 26th annual ACM symposium on User interface software and technology\",\n      \"markdown\": \"SeeSS\",\n      \"video\": \"<iframe width='100%' height='315' src='https://www.youtube.com/embed/DABt2poDiI8' frameborder='0' allowfullscreen></iframe>\",\n      \"tags\": [\"4\", \"1\", \"2\"]\n    },\n    {\n      \"title\": \"WaterIraIra\",\n      \"subtitle\": \"Monitoring unauthorized flash drive usage\",\n      \"img\": \"/dist/images/wateriraira.png\",\n      \"description\": \"Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen\",\n      \"markdown\": \"WaterIraIra\",\n      \"tags\": [\"0\", \"1\", \"2\"]\n    },\n    {\n      \"title\": \"WonderLens\",\n      \"subtitle\": \"Monitoring unauthorized flash drive usage\",\n      \"img\": \"/dist/images/wonderlens.png\",\n      \"description\": \"Build a real time alarming web interface for unauthorized USB usage. Deployed on the always-on surveillance screen\",\n      \"markdown\": \"WonderLens\",\n      \"tags\": [\"0\", \"1\", \"2\"]\n    } \n  ]\n}";
+arguments[4][2][0].apply(exports,arguments)
+},{"dup":2}],4:[function(require,module,exports){
+module.exports=module.exports = "{\n  \"projects\": [     \n    {\n      \"title\": \"Computer Graphics\",\n      \"subtitle\": \"Cornell CS 5620: Computer Graphics Assignments\",\n      \"img\": \"/src/images/cg.png\",\n      \"description\": \"Wireframe Renderer, Surface Renderer, Shading Renderer, OpenGL Renderer, OpenGL Animator\",\n      \"markdown\": \"ComputerGraphics\",\n      \"tags\": [\"c.Course Project\", \"t.C++\", \"t.OpenGL\"]\n    },    \n    {\n      \"title\": \"Flap\",\n      \"subtitle\": \"Friends create videos together in a fun simple way\",\n      \"img\": \"/src/images/flap.png\",\n      \"description\": \"Cornell Tech's Company Challenge from Fly Labs: How might we enable people to get creative with video in new ways?\",\n      \"markdown\": \"Flap\",\n      \"tags\": [\"c.Course Project\", \"c.iOS App\", \"t.Swift\"]\n    }, \n    {\n      \"title\": \"CashLess\",\n      \"date\": \"October, 2015\",\n      \"subtitle\": \"QR Code Mobile Payment\",\n      \"img\": \"/src/images/cashless.png\",\n      \"description\": \"Fintech Hackathon\",\n      \"markdown\": \"CashLess\",\n      \"tags\": [\"c.Hackathon\", \"c.iOS App\", \"t.Swift\"]\n    }, \n    {\n      \"title\": \"Leetcode OJ\",\n      \"subtitle\": \"Algorithms and Data Structure Challenge\",\n      \"img\": \"/src/images/leetcode.png\",\n      \"description\": \"Learning Python through practicing challenges\",\n      \"markdown\": \"ComputerGraphics\",\n      \"tags\": [\"c.Competitive Programming\", \"t.Python\"]\n    },     \n    {\n      \"title\": \"BaseSystem\",\n      \"subtitle\": \"Computer asset status aggregator\",\n      \"img\": \"/dist/images/basesystem.jpg\",\n      \"description\": \"Self-initiative project during Mandatory Military Service. Reduce tedious task that normally take around 3 mins, to 5 secs\",\n      \"markdown\": \"BaseSystem\",\n      \"tags\": [\"c.Web App\", \"t.React.js\", \"t.Flux\", \"t.Node.js\", \"t.MSSQL\"]\n    },\n    {\n      \"title\": \"Project Euler\",\n      \"subtitle\": \"Algorithms and Data Structure Challenge\",\n      \"img\": \"/src/images/euler.png\",\n      \"description\": \"Learning Haskell through practicing challenges\",\n      \"markdown\": \"ComputerGraphics\",\n      \"tags\": [\"c.Competitive Programming\", \"t.Haskell\"]\n    },     \n    {\n      \"title\": \"USBAlarmSystem\",\n      \"subtitle\": \"Monitoring unauthorized flash drive usage\",\n      \"img\": \"/dist/images/usbsystem.jpg\",\n      \"description\": \"A real time alarming web interface for unauthorized USB usage. Deployed on always-on surveillance screen\",\n      \"markdown\": \"USBAlarmSystem\",\n      \"tags\": [\"c.Web App\", \"t.React.js\", \"t.Flux\", \"t.Node.js\", \"t.MSSQL\"]\n    },\n    {\n      \"title\": \"WonderLens\",\n      \"subtitle\": \"Optical Lenses and Mirrors for Tangible Interactions on Printed Paper\",\n      \"img\": \"/dist/images/wonderlens.png\",\n      \"description\": \"Published at ACM CHI '15\",\n      \"markdown\": \"WonderLens\",\n      \"tags\": [\"c.HCI\", \"t.Arduino\", \"t.GaussSense\"]\n    },    \n    {\n      \"title\": \"SeeSS\",\n      \"subtitle\": \"Seeing What I Broke - Visualizing Change Impact of Cascading Style Sheets (CSS)\",\n      \"img\": \"/dist/images/seess.png\",\n      \"description\": \"Published at ACM UIST '13\",\n      \"markdown\": \"SeeSS\",\n      \"video\": \"<iframe width='100%' height='315' src='https://www.youtube.com/embed/DABt2poDiI8' frameborder='0' allowfullscreen></iframe>\",\n      \"tags\": [\"c.HCI\", \"c.Brackets Extention\", \"t.Sass\", \"t.CoffeeScript\"]\n    },\n    {\n      \"title\": \"Water IraIra Bou\",\n      \"subtitle\": \"Don't hit the track & Faster then the blue water!\",\n      \"img\": \"/dist/images/wateriraira.png\",\n      \"description\": \"1st Creativity Award at ACM UIST‘13 Student Innovation Contest\",\n      \"markdown\": \"WaterIraIra\",\n      \"tags\": [\"c.HCI\", \"t.Arduino\", \"t.PumpSpark\"]\n    }\n  ]\n}";
 
 },{}],5:[function(require,module,exports){
 (function (root, factory) {
@@ -45643,6 +45642,14 @@ var AboutMe = React.createClass({displayName: "AboutMe",
                 React.createElement("h2", {style: {color: "white", padding: 0}}, "Yu Chien Chan"), 
                 React.createElement("h4", {style: style.desc}, "Master in CS at Cornell University (Expected May 2016)"), 
                 React.createElement("h4", null, "Full-stack Developer")
+              ), 
+
+
+              React.createElement("div", null, 
+                React.createElement("p", null, "This mobile-first website is build mainly with reactJS, and is still under development. "), 
+                React.createElement("p", null, "You can see the progress through: "), 
+
+                React.createElement("a", {href: "https://github.com/yuchien302/yuchien302.github.io"}, "https://github.com/yuchien302/yuchien302.github.io")
               )
             )
           )
@@ -45657,7 +45664,7 @@ module.exports = AboutMe;
 
 },{"react":385,"react-bootstrap/lib/Col":202,"react-bootstrap/lib/Grid":204,"react-bootstrap/lib/Row":211}],450:[function(require,module,exports){
 var React = require('react');
-
+var ReactDOM = require('react-dom');
 
 // Twitter Bootstrap
 var Grid = require('react-bootstrap/lib/Grid');
@@ -45671,7 +45678,9 @@ var masonryOptions = {
 };
 
 var Articles = React.createClass({displayName: "Articles",
+    
   render: function() {
+
     return (
 
       React.createElement("div", {style: {margin: "0 4px", paddingTop: "28px"}}, 
@@ -45683,15 +45692,7 @@ var Articles = React.createClass({displayName: "Articles",
               ), 
 
               React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
-                React.createElement("a", {className: "m-story", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/@yuchien/test-716e20a2930a"}, "Test"), React.createElement("br", null)
-              ), 
-
-              React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
-                React.createElement("a", {className: "m-story", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/@ReactJS_News/react-vs-angularjs-how-the-two-compare-reactjs-news-reactjs-news-angularjs-news-9122c70d240f"}, "React vs AngularJS — How the two Compare — ReactJS News — ReactJS News — AngularJS News"), React.createElement("br", null)
-              ), 
-
-              React.createElement(Col, {xs: 12, sm: 6, md: 4}, 
-                React.createElement("a", {className: "m-story", "data-collapsed": "false", "data-width": "100%", href: "https://medium.com/keep-learning-keep-growing/the-answer-is-yes-4de724503e6"}, "The Answer is Yes"), React.createElement("br", null)
+                React.createElement("a", {className: "m-story", "data-collapsed": "true", href: "https://medium.com/shopify-ux/so-you-want-to-be-a-front-end-devleoper-f8be110f1d5f"}, "Using React is a Business Decision, Not a Technology Choice"), React.createElement("br", null)
               )
             )
           )
@@ -45704,7 +45705,7 @@ var Articles = React.createClass({displayName: "Articles",
 
 module.exports = Articles;
 
-},{"react":385,"react-bootstrap/lib/Col":202,"react-bootstrap/lib/Grid":204,"react-bootstrap/lib/Row":211,"react-masonry-component":216}],451:[function(require,module,exports){
+},{"react":385,"react-bootstrap/lib/Col":202,"react-bootstrap/lib/Grid":204,"react-bootstrap/lib/Row":211,"react-dom":215,"react-masonry-component":216}],451:[function(require,module,exports){
 var Colors = require('material-ui/lib/styles/colors');
 var ColorManipulator = require('material-ui/lib/utils/color-manipulator');
 var Spacing = require('material-ui/lib/styles/spacing');
@@ -45742,6 +45743,8 @@ var CardText = require('material-ui/lib/card/card-text');
 var CardTitle = require('material-ui/lib/card/card-title');
 var FlatButton = require('material-ui/lib/flat-button');
 
+var FontIcon = require('material-ui/lib/font-icon');
+var IconButton = require('material-ui/lib/icon-button');
 
 // Twitter Bootstrap
 var Modal = require('react-bootstrap/lib/Modal')
@@ -45754,7 +45757,7 @@ var md = new Remarkable('commonmark');
 var Tag = require('./Tag.jsx')
 var style = {
   root:{
-    marginBottom: 18
+    marginBottom: 28
   },
   tags:{
     listStyle: "none",
@@ -45778,8 +45781,11 @@ var Project = React.createClass({displayName: "Project",
     this.setState({show: false});
   },
   render: function() {
+    var tags_map = { c: "category", t: "tech" }
     var tags = this.props.project.tags.map(function(t, i){
-      return ( React.createElement(Tag, {key: i, title: t.description, type: t.type}) )
+      des = t.substring(2)
+      type = tags_map[t.substring(0, 1)]
+      return ( React.createElement(Tag, {key: i, title: des, type: type}) )
     })
     var media = (React.createElement("img", {src: this.props.project.img}))
     // var media = this.props.project.video? (<div dangerouslySetInnerHTML={{__html: this.props.project.video}} />) : (<img src={this.props.project.img}/>)
@@ -45797,11 +45803,12 @@ var Project = React.createClass({displayName: "Project",
             React.createElement("ul", {style: style.tags}, tags)
           ), 
           
-          React.createElement(CardText, null, 
+          React.createElement(CardText, {style: {paddingTop: 0}}, 
             this.props.project.description
           ), 
 
           React.createElement(CardActions, {style: {borderTop: "1px solid " + Colors.grey300, textAlign: "right"}}, 
+            /*<IconButton iconClassName="material-icons">code</IconButton>*/
             React.createElement(FlatButton, {label: "MORE", onClick: this.showModal})
           )
         ), 
@@ -45826,7 +45833,7 @@ var Project = React.createClass({displayName: "Project",
 
 module.exports = Project;
 
-},{"./Tag.jsx":454,"material-ui/lib/card/card":150,"material-ui/lib/card/card-actions":144,"material-ui/lib/card/card-expandable":145,"material-ui/lib/card/card-header":146,"material-ui/lib/card/card-media":147,"material-ui/lib/card/card-text":148,"material-ui/lib/card/card-title":149,"material-ui/lib/flat-button":152,"material-ui/lib/styles/colors":164,"react":385,"react-bootstrap/lib/Modal":205,"remarkable":386}],453:[function(require,module,exports){
+},{"./Tag.jsx":454,"material-ui/lib/card/card":150,"material-ui/lib/card/card-actions":144,"material-ui/lib/card/card-expandable":145,"material-ui/lib/card/card-header":146,"material-ui/lib/card/card-media":147,"material-ui/lib/card/card-text":148,"material-ui/lib/card/card-title":149,"material-ui/lib/flat-button":152,"material-ui/lib/font-icon":153,"material-ui/lib/icon-button":154,"material-ui/lib/styles/colors":164,"react":385,"react-bootstrap/lib/Modal":205,"remarkable":386}],453:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -45854,10 +45861,8 @@ var Projects = React.createClass({displayName: "Projects",
 
   render: function() {
     var projects = JSON.parse(data).projects
-    var tags = JSON.parse(data).tags
     
     projects.forEach(function(p){ 
-      p.tags = p.tags.map(function(t){ return tags[t] })
       p.markdown = descriptions[p.markdown]
     })
 
