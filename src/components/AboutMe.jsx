@@ -52,7 +52,15 @@ var AboutMe = React.createClass({
                 <h2 style={{color: "white", padding: 0}}>Yu Chien Chan</h2>
                 <h4 style={style.desc}>Master in CS at Cornell University (Expected May 2016)</h4>
                 <h4>Full-stack Developer</h4>
-              </Col>              
+              </Col>         
+
+
+              <div> 
+                <p>This mobile-first website is build mainly with reactJS, and is still under development. </p>
+                <p>You can see the progress through: </p>
+
+                <a href="https://github.com/yuchien302/yuchien302.github.io">https://github.com/yuchien302/yuchien302.github.io</a>
+              </div>
             </Row>
           </Grid>
         </div>
