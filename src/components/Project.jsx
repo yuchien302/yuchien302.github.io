@@ -12,6 +12,8 @@ var CardText = require('material-ui/lib/card/card-text');
 var CardTitle = require('material-ui/lib/card/card-title');
 var FlatButton = require('material-ui/lib/flat-button');
 
+var FontIcon = require('material-ui/lib/font-icon');
+var IconButton = require('material-ui/lib/icon-button');
 
 // Twitter Bootstrap
 var Modal = require('react-bootstrap/lib/Modal')
@@ -24,7 +26,7 @@ var md = new Remarkable('commonmark');
 var Tag = require('./Tag.jsx')
 var style = {
   root:{
-    marginBottom: 18
+    marginBottom: 28
   },
   tags:{
     listStyle: "none",
@@ -48,8 +50,11 @@ var Project = React.createClass({
     this.setState({show: false});
   },
   render: function() {
+    var tags_map = { c: "category", t: "tech" }
     var tags = this.props.project.tags.map(function(t, i){
-      return ( <Tag key={i} title={t.description} type={t.type} /> )
+      des = t.substring(2)
+      type = tags_map[t.substring(0, 1)]
+      return ( <Tag key={i} title={des} type={type} /> )
     })
     var media = (<img src={this.props.project.img}/>)
     // var media = this.props.project.video? (<div dangerouslySetInnerHTML={{__html: this.props.project.video}} />) : (<img src={this.props.project.img}/>)
@@ -67,11 +72,12 @@ var Project = React.createClass({
             <ul style={style.tags}>{tags}</ul>
           </CardText>
           
-          <CardText>
+          <CardText style={{paddingTop: 0}}>
             {this.props.project.description}
           </CardText>
 
           <CardActions style={{borderTop: "1px solid " + Colors.grey300, textAlign: "right"}}>
+            {/*<IconButton iconClassName="material-icons">code</IconButton>*/}
             <FlatButton label="MORE" onClick={this.showModal}/>
           </CardActions>
         </Card>

@@ -25,10 +25,8 @@ var Projects = React.createClass({
 
   render: function() {
     var projects = JSON.parse(data).projects
-    var tags = JSON.parse(data).tags
     
     projects.forEach(function(p){ 
-      p.tags = p.tags.map(function(t){ return tags[t] })
       p.markdown = descriptions[p.markdown]
     })
 
