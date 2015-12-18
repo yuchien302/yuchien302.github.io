@@ -74,9 +74,9 @@ var FAVICON_DATA_FILE = 'faviconData.json';
 // package (see the check-for-favicon-update task below).
 gulp.task('generate-favicon', function(done) {
   realFavicon.generateFavicon({
-    masterPicture: './src/images/256-2.png',
-    dest: './',
-    iconsPath: './',
+    masterPicture: './src/images/256-3.png',
+    dest: './ico',
+    iconsPath: './ico',
     design: {
       ios: {
         pictureAspect: 'backgroundAndMargin',
@@ -122,9 +122,9 @@ gulp.task('generate-favicon', function(done) {
 // this task whenever you modify a page. You can keep this task 
 // as is or refactor your existing HTML pipeline.
 gulp.task('inject-favicon-markups', function() {
-  gulp.src([ 'TODO: List of the HTML files where to inject favicon markups' ])
+  gulp.src([ './index.html' ])
   .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
-  .pipe(gulp.dest('TODO: Path to the directory where to store the HTML files'));
+  .pipe(gulp.dest('./dist/'));
 });
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
