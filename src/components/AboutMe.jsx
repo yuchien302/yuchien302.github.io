@@ -61,6 +61,7 @@ var AboutMe = React.createClass({
 
                 <a href="https://github.com/yuchien302/yuchien302.github.io">https://github.com/yuchien302/yuchien302.github.io</a>
               </div>
+              <a href="/contents/YuChien_Chan.pdf" download>Resume</a>
             </Row>
           </Grid>
         </div>
