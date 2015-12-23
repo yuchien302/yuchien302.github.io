@@ -9,6 +9,8 @@ var source = require('vinyl-source-stream');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var bulkify = require('bulkify')
+var uglify = require('gulp-uglify');
+var buffer = require('vinyl-buffer');
 
 gulp.task('default', ['sass', 'js'], function() {
 
@@ -42,13 +44,19 @@ gulp.task('js', function(){
   .transform(reactify)
   .transform(bulkify)
   .bundle()
-  .pipe(source('bundle.js'))
+  .pipe(source('bundle.min.js'))
+  .pipe(buffer())
+  .pipe(uglify())
   .pipe(gulp.dest('dist'))
   .pipe(browserSync.stream());
 });
 
-
-
+// gulp.task('compress', function() {
+//   return gulp.src('./dist/bundle.js')
+//     .pipe(uglify())
+//     .pipe(source('bundle.min.js'))
+//     .pipe(gulp.dest('dist'));
+// });
 
 gulp.task('images', () => {
   return gulp.src('./src/images/*')
