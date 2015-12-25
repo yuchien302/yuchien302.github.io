@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Colors = require('material-ui/lib/styles/colors');
 
 // Twitter Bootstrap
 var Grid = require('react-bootstrap/lib/Grid');
@@ -30,13 +31,30 @@ var Projects = React.createClass({
       p.markdown = descriptions[p.markdown]
     })
 
-    var ps = projects.map(function(p, i){
+    var ps = projects.filter(function(p){
+      return !p.is_feature
+    }).map(function(p, i){
+      return ( <Col xs={12} sm={6} md={4} key={i}><Project project={p}/></Col> )
+    })
+
+    var ps_feature = projects.filter(function(p){
+      return p.is_feature
+    }).map(function(p, i){
       return ( <Col xs={12} sm={6} md={4} key={i}><Project project={p}/></Col> )
     })
 
     return (
       <div style={{margin: "0 4px", paddingTop: "28px"}}>
         <Grid>
+          <Row><Col md={12} ><h3 style={{color: Colors.grey600}}>Featured Projects</h3></Col></Row>
+          <Row>
+            <Masonry>
+              {ps_feature}
+            </Masonry>
+          </Row>
+        </Grid>      
+        <Grid>
+          <Row><Col md={12} ><h3 style={{color: Colors.grey600}}>Archived Projects</h3></Col></Row>
           <Row>
             <Masonry>
               {ps}

@@ -6,7 +6,8 @@
       "img": "/src/images/cg.png",
       "description": "Wireframe Renderer, Surface Renderer, Shading Renderer, OpenGL Renderer, OpenGL Animator",
       "markdown": "ComputerGraphics",
-      "tags": ["c.Course Project", "t.C++", "t.OpenGL"]
+      "tags": ["c.Course Project", "t.C++", "t.OpenGL"],
+      "is_feature": false
     },    
     {
       "title": "Flap",
@@ -14,7 +15,8 @@
       "img": "/src/images/flap@2x.jpg",
       "description": "Cornell Tech's Company Challenge from Fly Labs: How might we enable people to get creative with video in new ways?",
       "markdown": "Flap",
-      "tags": ["c.Course Project", "c.iOS App", "t.Swift"]
+      "tags": ["c.Course Project", "c.iOS App", "t.Swift"],
+      "is_feature": false
     }, 
     {
       "title": "CashLess",
@@ -23,7 +25,8 @@
       "img": "/src/images/cashless@2x.jpg",
       "description": "Fintech Hackathon",
       "markdown": "CashLess",
-      "tags": ["c.Hackathon", "c.iOS App", "t.Swift"]
+      "tags": ["c.Hackathon", "c.iOS App", "t.Swift"],
+      "is_feature": false
     }, 
     {
       "title": "Leetcode OJ",
@@ -31,7 +34,17 @@
       "img": "/src/images/leetcode@2x.jpg",
       "description": "Learning Python through practicing challenges",
       "markdown": "ComputerGraphics",
-      "tags": ["c.Competitive Programming", "t.Python"]
+      "tags": ["c.Competitive Programming", "t.Python"],
+      "is_feature": false
+    },
+    {
+      "title": "BookCall",
+      "subtitle": "",
+      "img": "/src/images/wonderlens@2x.jpg",
+      "description": "Open HCI 2015 Final Project",
+      "markdown": "BookCall",
+      "tags": ["c.HCI", "t.Arduino"],
+      "is_feature": false
     },     
     {
       "title": "BaseSystem",
@@ -39,7 +52,8 @@
       "img": "/dist/images/basesystem.jpg",
       "description": "Self-initiative project during Mandatory Military Service. Reduce tedious task that normally take around 3 mins, to 5 secs",
       "markdown": "BaseSystem",
-      "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"]
+      "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"],
+      "is_feature": true
     },
     {
       "title": "Project Euler",
@@ -47,7 +61,8 @@
       "img": "/src/images/euler@2x.jpg",
       "description": "Learning Haskell through practicing challenges",
       "markdown": "ComputerGraphics",
-      "tags": ["c.Competitive Programming", "t.Haskell"]
+      "tags": ["c.Competitive Programming", "t.Haskell"],
+      "is_feature": false
     },     
     {
       "title": "USBAlarmSystem",
@@ -55,7 +70,8 @@
       "img": "/src/images/usbsystem@2x.jpg",
       "description": "A real time alarming web interface for unauthorized USB usage. Deployed on always-on surveillance screen",
       "markdown": "USBAlarmSystem",
-      "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"]
+      "tags": ["c.Web App", "t.React.js", "t.Flux", "t.Node.js", "t.MSSQL"],
+      "is_feature": false
     },
     {
       "title": "WonderLens",
@@ -63,7 +79,8 @@
       "img": "/src/images/wonderlens@2x.jpg",
       "description": "Published at ACM CHI '15",
       "markdown": "WonderLens",
-      "tags": ["c.HCI", "t.Arduino", "t.GaussSense"]
+      "tags": ["c.HCI", "t.Arduino", "t.GaussSense"],
+      "is_feature": false
     },    
     {
       "title": "SeeSS",
@@ -72,7 +89,8 @@
       "description": "Published at ACM UIST '13",
       "markdown": "SeeSS",
       "video": "<iframe width='100%' height='315' src='https://www.youtube.com/embed/DABt2poDiI8' frameborder='0' allowfullscreen></iframe>",
-      "tags": ["c.HCI", "c.Brackets Extention", "t.Sass", "t.CoffeeScript"]
+      "tags": ["c.HCI", "c.Brackets Extention", "t.Sass", "t.CoffeeScript"],
+      "is_feature": true
     },
     {
       "title": "Water IraIra Bou",
@@ -80,7 +98,8 @@
       "img": "/src/images/wateriraira@2x.jpg",
       "description": "1st Creativity Award at ACM UIST‘13 Student Innovation Contest",
       "markdown": "WaterIraIra",
-      "tags": ["c.HCI", "t.Arduino", "t.PumpSpark"]
+      "tags": ["c.HCI", "t.Arduino", "t.PumpSpark"],
+      "is_feature": false
     }
   ]
 }
